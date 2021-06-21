@@ -1,0 +1,43 @@
+#!/usr/bin/env ts-node
+
+const program = require('commander')
+const fs = require('fs')
+const path = require('path')
+const pkg = require('../package.json')
+const kleur = require('kleur')
+const build = require('../scripts/build')
+
+program
+  .version(pkg.version)
+  .option('-d, --dotenv <dotenv>', '')
+  .option('-b, --bundle', '')
+
+program
+  .command('init')
+  .description(kleur.yellow('初始化工具'))
+  .action(() => {
+
+  })
+
+program
+  .command('build')
+  .description(kleur.yellow('编译项目'))
+  .action(() => {
+    const {dotenv, bundle} = program.opts()
+
+    if (dotenv) {
+      process.env.DOTENV = dotenv
+      process.env.DEBUG = bundle
+      build()
+    }
+  })
+
+program.on('--help', () => {
+  console.log()
+  console.log('  Examples:')
+  console.log()
+  console.log('    $ mpc init')
+  console.log('    $ mpc --dotenv=production.env')
+})
+
+program.parse(process.argv)

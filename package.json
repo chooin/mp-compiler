@@ -1,0 +1,31 @@
+{
+  "name": "mp-compiler",
+  "version": "1.0.0",
+  "bin": {
+    "mp-complier": "bin/mpc"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.11",
+    "@types/node": "^15.12.2"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.1",
+    "commander": "^7.2.0",
+    "dart-sass": "^1.25.0",
+    "dotenv": "^10.0.0",
+    "esbuild": "^0.12.8",
+    "fast-files": "^1.0.9",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.1",
+    "kleur": "^4.1.4",
+    "ora": "^5.4.1",
+    "postcss": "^8.3.5",
+    "postcss-pxtorpx-pro": "^1.0.0",
+    "sass": "^1.35.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.3"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
